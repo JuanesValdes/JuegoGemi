@@ -12,7 +12,7 @@ public enum EnemigoIA
 public class MovPuntosENEMIGO : MonoBehaviour
 {
     public float velocidad;
-    public Transform Saquief;
+    public Transform sierra;
     public Transform[] puntos;
     public Transform target;
     public int indiceTarget;
@@ -24,7 +24,7 @@ public class MovPuntosENEMIGO : MonoBehaviour
     {
         estadoActual = EnemigoIA.Patrulla;
         target = puntos[1];
-        Saquief.position = target.position;
+        sierra.position = target.position;
         velocidad = velocidad * Time.deltaTime;
         indiceTarget = 0;
 
@@ -33,12 +33,12 @@ public class MovPuntosENEMIGO : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = target.position - Saquief.position;
+        Vector3 dir = target.position - sierra.position;
 
-        float distance = Vector3.Distance(Saquief.position, target.position);
-        float distancePlayer = Vector3.Distance(Saquief.position, player.position);
+        float distance = Vector3.Distance(sierra.position, target.position);
+        float distancePlayer = Vector3.Distance(sierra.position, player.position);
 
-        Saquief.Translate(dir.normalized * velocidad, Space.World);
+        sierra.Translate(dir.normalized * velocidad, Space.World);
 
         if (estadoActual == EnemigoIA.Patrulla)
 
@@ -46,7 +46,7 @@ public class MovPuntosENEMIGO : MonoBehaviour
 
         if (distance <= 0.5f)
         {
-            if (indiceTarget >= puntos.Length - 0.5)
+            if (indiceTarget >= puntos.Length - 1)
             {
                 indiceTarget = 0;
                 target = puntos[indiceTarget];
@@ -58,7 +58,7 @@ public class MovPuntosENEMIGO : MonoBehaviour
 
         }
 
-        if (distancePlayer <= 0.5)
+        if (distancePlayer <= 0.5f)
         {
             estadoActual = EnemigoIA.Perseguir;
         }

@@ -8,6 +8,7 @@ public class MOVGEMI : MonoBehaviour
     public float velocidad=5;
     public float salto = 3;
     public float rotar = 50;
+    public CamaraF rotarCamara;
     void Start()
     {
         
@@ -45,9 +46,11 @@ public class MOVGEMI : MonoBehaviour
             transform.Rotate(Vector3.down * rotar * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.E))
+       if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(Vector3.up * rotar * Time.deltaTime);
+            //transform.Rotate(Vector3.up * rotar * Time.deltaTime);
+            transform.localEulerAngles = new Vector3(0, rotar, 0);
+            rotarCamara.rotarCamara = true;
         }
     }
 }
