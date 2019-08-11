@@ -9,6 +9,8 @@ public enum EnemigoIA
     Atacar
 }
 
+//una orden de desplazamiento para el enemigo por el nivel en x número de puntos determinados, en los cuales "patrullará" yendo y vieniendo y una vez que el player entre en su rango determindo, este le seguirá
+
 public class MovPuntosENEMIGO : MonoBehaviour
 {
     public float velocidad;
@@ -58,6 +60,7 @@ public class MovPuntosENEMIGO : MonoBehaviour
 
         }
 
+        // una vez que el player salga de su rango, este volverá a su zona a patrullar
         if (distancePlayer <= 0.5f)
         {
             estadoActual = EnemigoIA.Perseguir;

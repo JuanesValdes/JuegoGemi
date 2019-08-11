@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MOVGEMI : MonoBehaviour
 {
+    // EL controlador del player, que nos servirá para delimitar los movimientos que hará cada que presionemos x tecla
+
     // Start is called before the first frame update
     public float velocidad=5;
     public float salto = 3;
     public float rotar = 50;
-    public CamaraF rotarCamara;
     void Start()
     {
         
@@ -40,17 +41,19 @@ public class MOVGEMI : MonoBehaviour
         {
             transform.Translate(Vector3.up * salto * Time.deltaTime);
         }
+        // AQUI entran 2 teclas clave para el gameplay, ya que con ellas rotaremos al player para ajustarnos al nivel y avanzar de mejor forma
 
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(Vector3.down * rotar * Time.deltaTime);
+            //transform.localEulerAngles = new Vector3(0, -rotar, 0);
         }
 
        if (Input.GetKey(KeyCode.E))
         {
-            //transform.Rotate(Vector3.up * rotar * Time.deltaTime);
-            transform.localEulerAngles = new Vector3(0, rotar, 0);
-            rotarCamara.rotarCamara = true;
+            transform.Rotate(Vector3.up * rotar * Time.deltaTime);
+            //transform.localEulerAngles = new Vector3(0, rotar, 0);
+          
         }
     }
 }
