@@ -5067,7 +5067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21730fce6238fc94cab6fb5aea498d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.1
+  velocidad: 0.2
   sierra: {fileID: 1766554997}
   puntos:
   - {fileID: 0}
@@ -10810,7 +10810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21730fce6238fc94cab6fb5aea498d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.1
+  velocidad: 0.2
   sierra: {fileID: 1775826496}
   puntos:
   - {fileID: 0}
@@ -18441,7 +18441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21730fce6238fc94cab6fb5aea498d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.1
+  velocidad: 0.2
   sierra: {fileID: 971812564}
   puntos:
   - {fileID: 0}
